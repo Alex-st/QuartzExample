@@ -10,4 +10,7 @@ spring:
 scheduler:
   cronTemplate: 0/3 * * * * ?
 
+spring.quartz.job-store-type: jdbc
+spring.quartz.jdbc.initialize-schema: NEVER
+
 liquibase.enabled: true

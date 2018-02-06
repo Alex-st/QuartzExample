@@ -4,8 +4,7 @@ spring.quartz.job-store-type: jdbc
 spring.quartz.jdbc.initialize-schema: NEVER
 
 scheduler:
-#  cronTemplate: 0 0/1 * * * ?
-  cronTemplate: 0/1 * * * * ?
+  cronTemplate: 0/2 * * * * ?
   quartz:
     org.quartz.scheduler:
       instanceName: notification-analytic-processor-quartz

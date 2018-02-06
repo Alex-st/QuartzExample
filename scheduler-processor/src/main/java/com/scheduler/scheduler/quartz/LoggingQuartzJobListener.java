@@ -18,7 +18,7 @@ public class LoggingQuartzJobListener extends JobListenerSupport {
     @Override
     public void jobToBeExecuted(JobExecutionContext context) {
         String jobName = context.getJobDetail().getKey().toString();
-        log.debug("Job : {} is going to start...", jobName);
+        log.info("Job : {} is going to start...", jobName);
     }
 
     @Override
