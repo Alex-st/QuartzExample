@@ -1,0 +1,25 @@
+liquibase.change-log: classpath:db-migration/master.xml
+
+scheduler:
+#  cronTemplate: 0 0/1 * * * ?
+  cronTemplate: 0/1 * * * * ?
+  quartz:
+    org.quartz.scheduler:
+      instanceName: notification-analytic-processor-quartz
+      instanceId: AUTO
+
+    org.quartz.threadPool:
+      class: org.quartz.simpl.SimpleThreadPool
+      threadCount: 5
+      threadsInheritContextClassLoaderOfInitializingThread: true
+
+    org.quartz.jobStore:
+      class: org.quartz.impl.jdbcjobstore.JobStoreTX
+      driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+      useProperties: false
+      tablePrefix: QRTZ_
+      isClustered: true
+      clusterCheckinInterval: 20000
+      misfireThreshold: 60000
+
+    org.quartz.scheduler.skipUpdateCheck: true

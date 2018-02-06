@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate.ddl-auto: validate
+    show-sql: true
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:jtemplate;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE;
+    initialize: true
+
+scheduler:
+  cronTemplate: 0/3 * * * * ?
+
+liquibase.enabled: true
